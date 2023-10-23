@@ -23,6 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \File::allFiles(base_path("src/BoundedContext/**/Infrastructure/migrations"));
     }
 }
