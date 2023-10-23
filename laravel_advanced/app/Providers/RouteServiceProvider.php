@@ -46,6 +46,16 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+
+            /**
+             * Load BoundedContext routes
+             */
+            foreach (\File::allFiles(base_path("src/BoundedContext/**/Infrastructure/routes")) as $routeFile) {
+                $type = explode(".", $routeFile->getBaseName())[0];
+                Route::prefix($type)
+                    ->middleware($type)
+                    ->group($routeFile->getRealPath());
+            };
         });
     }
 
