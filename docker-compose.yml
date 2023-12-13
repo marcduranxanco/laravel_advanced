@@ -20,7 +20,6 @@ services:
     entrypoint: vendor/bin/phpunit
   fpm:
     image: php:8.0.3-fpm
-    restart: always
     volumes:
       - .:/app
   nginx:

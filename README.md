@@ -10,6 +10,9 @@ This project follows the following courses:
 - Set up the project with `make setup` [WARNING] - This environtment is for development purposes. This command, makes unsafe environtment for security
 - Start the project `make up`
 
+## Access to the site
+- http://localhost:8080/
+
 # Main commands
 
 ## Make commands
